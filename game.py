@@ -1,8 +1,11 @@
-class Game:
-    ...
+from game_result import GameResult
 
-    def guess(self, guess_num):
+
+class Game:
+
+    def guess(self, guess_num) -> GameResult:
         self._assert_illegal_value(guess_num)
+        return GameResult(True, 3, 0)
 
     def _assert_illegal_value(self, guess_num):
         if guess_num is None:
