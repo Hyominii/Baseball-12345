@@ -30,10 +30,7 @@ class Game:
         return strike_cnt
 
     def _get_ball(self, guess_num: str, strike_cnt: int) -> int:
-        ball_cnt = 0
-        for num in guess_num:
-            if num in self._question:
-                ball_cnt += 1
+        ball_cnt = sum(1 for num in guess_num if num in self._question)
         ball_cnt -= strike_cnt
 
         return ball_cnt

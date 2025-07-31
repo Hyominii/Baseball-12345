@@ -1,8 +1,10 @@
+from dataclasses import dataclass
+
+@dataclass
 class GameResult:
-    def __init__(self, solved: bool, strikes: int, balls: int):
-        self._solved = solved
-        self._strikes = strikes
-        self._balls = balls
+    _solved: bool
+    _strikes: int
+    _balls: int
 
     @property
     def solved(self):
