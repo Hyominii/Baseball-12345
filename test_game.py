@@ -34,3 +34,15 @@ def test_return_solved_result_if_matched_number(game):
 def test_return_solved_result_if_unmatched_number(game):
     game.question = "123"
     assert_matched_number(game.guess("456"), solved=False, strikes=0, balls=0)
+
+
+@pytest.mark.parametrize("input", ["124", "423", "193"])
+def test_return_solved_result_2strikes_0ball(game, input):
+    game.question = "123"
+    assert_matched_number(game.guess(input), solved=False, strikes=2, balls=0)
+
+
+@pytest.mark.parametrize("input", ["132", "213", "321"])
+def test_return_solved_result_1strikes_2ball(game, input):
+    game.question = "123"
+    assert_matched_number(game.guess(input), solved=False, strikes=1, balls=2)

@@ -1,5 +1,5 @@
 class GameResult:
-    def __init__(self, solved, strikes, balls):
+    def __init__(self, solved: bool, strikes: int, balls: int):
         self._solved = solved
         self._strikes = strikes
         self._balls = balls
