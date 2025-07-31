@@ -2,12 +2,13 @@ class Game:
     ...
 
     def guess(self, guess_num):
+        self.assert_illegal_value(guess_num)
+
+    def assert_illegal_value(self, guess_num):
         if guess_num is None:
             raise TypeError()
-
         if len(guess_num) != 3:
             raise TypeError()
-
         for number in guess_num:
             if not ord('0') <= ord(number) <= ord('9'):
                 raise TypeError()
