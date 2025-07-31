@@ -2,6 +2,8 @@ from game_result import GameResult
 
 
 class Game:
+    def __init__(self):
+        self.question = ""
 
     def guess(self, guess_num) -> GameResult:
         self._assert_illegal_value(guess_num)
